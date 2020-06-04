@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'story_brain.dart';
 
 void main() => runApp(Bighoax());
 
@@ -10,6 +11,8 @@ class Bighoax extends StatelessWidget {
     );
   }
 }
+
+StoryBrain storyBrain = StoryBrain();
 
 class StoryPage extends StatefulWidget {
   _StoryPageState createState() => _StoryPageState();
@@ -35,10 +38,7 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 12,
                 child: Center(
                   child: Text(
-                    'If You take the blue pill...the story ends, '
-                    'you wake up in your bed and believe whatever you want to believe. '
-                    'You take the red pill...you stay in Wonderland, '
-                    'and I show you how deep the rabbit hole goes.',
+                    storyBrain.getStory(),
                     style: TextStyle(
                       fontSize: 28.0,
                     ),
@@ -51,7 +51,7 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {},
                   color: Colors.red,
                   child: Text(
-                    'Red pill',
+                    storyBrain.getRedPill(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
@@ -67,7 +67,7 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {},
                   color: Colors.blue,
                   child: Text(
-                    'Blue pill',
+                    storyBrain.getBluePill(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
