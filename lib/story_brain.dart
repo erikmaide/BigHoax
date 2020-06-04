@@ -55,7 +55,14 @@ class StoryBrain {
       _storyNumber = 5;
     } else if (choiceNumber == 2 && _storyNumber == 2) {
       _storyNumber = 4;
-    } else if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5) {
+    } else if (choiceNumber == 1 && _storyNumber == 3) {
+      _storyNumber = 4;
+    } else if (choiceNumber == 2 && _storyNumber == 3) {
+    } else if (choiceNumber == 1 && _storyNumber == 4) {
+      _storyNumber = 0;
+    } else if (choiceNumber == 2 && _storyNumber == 4) {
+      _storyNumber = 5;
+    } else if (_storyNumber == 5) {
       restart();
     }
   }
@@ -65,10 +72,10 @@ class StoryBrain {
   }
 
   bool buttonShouldBeVisible() {
-    if (_storyNumber == 0 || _storyNumber == 1 || _storyNumber == 2) {
-      return true;
-    } else {
+    if (_storyNumber == 5) {
       return false;
+    } else {
+      return true;
     }
   }
 }
